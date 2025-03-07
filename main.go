@@ -6,10 +6,12 @@ package main
 import (
 	"context"
 	"flag"
+
 	"log"
 
-	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 	"github.com/matanyall/terraform-provider-lago/internal/provider"
+
+	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 )
 
 var (
