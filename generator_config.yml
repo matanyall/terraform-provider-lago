@@ -1,0 +1,233 @@
+provider:
+  name: lago
+resources:
+  add_ons:
+    create:
+      path: /add_ons
+      method: POST
+    list:
+      path: /add_ons
+      method: GET
+    read:
+      path: /add_ons/{code}
+      method: GET
+    update:
+      path: /add_ons/{code}
+      method: PUT
+    delete:
+      path: /add_ons/{code}
+      method: DELETE
+  applied_coupons:
+    create:
+      path: /applied_coupons
+      method: POST
+    list:
+      path: /applied_coupons
+      method: GET
+    read:
+      path: /applied_coupons
+      method: GET
+  billable_metrics:
+    create:
+      path: /billable_metrics
+      method: POST
+    list:
+      path: /billable_metrics
+      method: GET
+    read:
+      path: /billable_metrics/{code}
+      method: GET
+    update:
+      path: /billable_metrics/{code}
+      method: PUT
+    delete:
+      path: /billable_metrics/{code}
+      method: DELETE
+  coupons:
+    create:
+      path: /coupons
+      method: POST
+    list:
+      path: /coupons
+      method: GET
+    read:
+      path: /coupons/{code}
+      method: GET
+    update:
+      path: /coupons/{code}
+      method: PUT
+    delete:
+      path: /coupons/{code}
+      method: DELETE
+  credit_notes:
+    create:
+      path: /credit_notes
+      method: POST
+    list:
+      path: /credit_notes
+      method: GET
+    read:
+      path: /credit_notes/{lago_id}
+      method: GET
+    update:
+      path: /credit_notes/{lago_id}/void
+      method: PUT
+  customers:
+    create:
+      path: /customers
+      method: POST
+    list:
+      path: /customers
+      method: GET
+    read:
+      path: /customers/{external_customer_id}/past_usage
+      method: GET
+    delete:
+      path: /customers/{external_customer_id}/applied_coupons/{applied_coupon_id}
+      method: DELETE
+  events:
+    create:
+      path: /events
+      method: POST
+    list:
+      path: /events
+      method: GET
+    read:
+      path: /events/{transaction_id}
+      method: GET
+  fees:
+    list:
+      path: /fees
+      method: GET
+    read:
+      path: /fees/{lago_id}
+      method: GET
+    update:
+      path: /fees/{lago_id}
+      method: PUT
+    delete:
+      path: /fees/{lago_id}
+      method: DELETE
+    create:
+      path: /fees/{lago_id}
+      method: PUT
+  invoices:
+    create:
+      path: /invoices
+      method: POST
+    list:
+      path: /invoices
+      method: GET
+    read:
+      path: /invoices/{lago_id}
+      method: GET
+    update:
+      path: /invoices/{lago_id}/refresh
+      method: PUT
+  payment_requests:
+    create:
+      path: /payment_requests
+      method: POST
+    list:
+      path: /payment_requests
+      method: GET
+    read:
+      path: /payment_requests
+      method: GET
+  payments:
+    create:
+      path: /payments
+      method: POST
+    list:
+      path: /payments
+      method: GET
+    read:
+      path: /payments
+      method: GET
+  plans:
+    create:
+      path: /plans
+      method: POST
+    list:
+      path: /plans
+      method: GET
+    read:
+      path: /plans/{code}
+      method: GET
+    update:
+      path: /plans/{code}
+      method: PUT
+    delete:
+      path: /plans/{code}
+      method: DELETE
+  subscriptions:
+    create:
+      path: /subscriptions
+      method: POST
+    list:
+      path: /subscriptions
+      method: GET
+    read:
+      path: /subscriptions/{external_id}/lifetime_usage
+      method: GET
+    update:
+      path: /subscriptions/{external_id}/lifetime_usage
+      method: PUT
+    delete:
+      path: /subscriptions/{external_id}
+      method: DELETE
+  taxes:
+    create:
+      path: /taxes
+      method: POST
+    list:
+      path: /taxes
+      method: GET
+    read:
+      path: /taxes/{code}
+      method: GET
+    update:
+      path: /taxes/{code}
+      method: PUT
+    delete:
+      path: /taxes/{code}
+      method: DELETE
+  wallets:
+    create:
+      path: /wallets
+      method: POST
+    list:
+      path: /wallets
+      method: GET
+    read:
+      path: /wallets/{lago_id}/wallet_transactions
+      method: GET
+    update:
+      path: /wallets/{lago_id}
+      method: PUT
+    delete:
+      path: /wallets/{lago_id}
+      method: DELETE
+  wallet_transactions:
+    create:
+      path: /wallet_transactions
+      method: POST
+    read:
+      path: /wallet_transactions/{lago_id}
+      method: GET
+  webhook_endpoints:
+    create:
+      path: /webhook_endpoints
+      method: POST
+    list:
+      path: /webhook_endpoints
+      method: GET
+    read:
+      path: /webhook_endpoints/{lago_id}
+      method: GET
+    update:
+      path: /webhook_endpoints/{lago_id}
+      method: PUT
+    delete:
+      path: /webhook_endpoints/{lago_id}
+      method: DELETE

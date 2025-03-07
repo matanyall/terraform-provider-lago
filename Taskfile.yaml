@@ -11,7 +11,11 @@ tasks:
     dir: "{{.TASKFILE_DIR}}"
     aliases: ["g"] # Short alias for the format task
     cmds:
-      - task: format::ruff
+      - uv run terraform-provider-lago
+      - tfplugingen-openapi generate lago_openapi.yaml
+      - tfplugingen-framework generate provider --package lago --input provider_code_spec.json -output internal/provider
+      - tfplugingen-framework generate resources --input provider_code_spec.json -output internal/resources
+      - tfplugingen-framework generate data-sources --input provider_code_spec.json -output internal/data_sources
 
   download_spec:
     desc: "Download the Lago OpenAPI spec"

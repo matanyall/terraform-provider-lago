@@ -1,0 +1,19 @@
+[project]
+name = "terraform-provider-lago"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Matanya", email = "mloewenthal@groq.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pyyaml>=6.0.2",
+]
+
+[project.scripts]
+terraform-provider-lago = "terraform_provider_lago:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
