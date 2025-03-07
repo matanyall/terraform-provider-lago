@@ -13,9 +13,11 @@ tasks:
     cmds:
       - uv run terraform-provider-lago
       - tfplugingen-openapi generate lago_openapi.yaml
-      - tfplugingen-framework generate provider --package lago --input provider_code_spec.json -output internal/provider
-      - tfplugingen-framework generate resources --input provider_code_spec.json -output internal/resources
-      - tfplugingen-framework generate data-sources --input provider_code_spec.json -output internal/data_sources
+      - tfplugingen-framework generate provider --package provider --input provider_code_spec.json -output internal/provider
+      - tfplugingen-framework generate resources --input provider_code_spec.json -output internal/provider
+      # - tfplugingen-framework generate data-sources --input provider_code_spec.json -output internal/data_sources
+      # - tfplugingen-framework scaffold provider --name lago --output-dir internal/provider
+      - go generate
 
   download_spec:
     desc: "Download the Lago OpenAPI spec"
