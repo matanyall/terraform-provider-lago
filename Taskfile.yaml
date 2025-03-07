@@ -1,0 +1,19 @@
+---
+# This Taskfile defines a set of tasks that can be run using the `task` command.
+# To invoke a task, use the command `task <task_name>`. For example, to run the `init` task, use `task init`.
+
+# This is the version of the Taskfile format being used
+version: "3"
+# Define the tasks that can be run
+tasks:
+  generate:
+    desc: "Generate the codebase"
+    dir: "{{.TASKFILE_DIR}}"
+    aliases: ["g"] # Short alias for the format task
+    cmds:
+      - task: format::ruff
+
+  download_spec:
+    desc: "Download the Lago OpenAPI spec"
+    cmds:
+      - curl -o lago_openapi.yaml https://swagger.getlago.com/openapi.yaml

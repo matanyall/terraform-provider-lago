@@ -1,0 +1,3 @@
+provider:
+  name: lago
+  schema_ref: '#/components/schemas/lago_provider_schema'
